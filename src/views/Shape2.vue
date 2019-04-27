@@ -4,7 +4,7 @@
     <Navigation :page="page"/>
 
     <v-container class="pa-0">
-      <v-layout row wrap align-center justify-center row fill-height>
+      <v-layout row wrap align-center justify-center fill-height>
         <v-flex xs12 sm8 md6 lg6 xl6>
           <v-card flat color="transparent" min-height="100vh">
             <!-- Text field for filter search -->
@@ -22,38 +22,29 @@
             </v-card-actions>
 
             <!-- Fish list container -->
-            <v-container grid-list-md overflow-x-hidden >
+            <v-container overflow-x-hidden>
               <v-layout row wrap>
                 <v-flex xs12>
                   <v-card max-height="60vh" flat>
                     <!-- Fish list -->
-                    <v-card v-for="(spec, index) in fish" :key="index">
-                      <v-card-text class="pa-0">
-                        <v-container overflow-y-hidden class="pa-1">
-                          <v-layout row wrap>
-                            <v-flex xs8>
-                              <v-card-title primary-title>
-                                <v-avatar
-                                  size="5.5em"
-                                  tile
-                                  color="primary"
-                                >
-                                  <img
-                                    :src="spec.img"
-                                    aspect-ratio="1"
-                                    alt="avatar"
-                                  >
-                                </v-avatar>
-                                <div>
-                                  <div>{{ spec.name }}</div>
-                                  <span class="grey--text caption">{{ spec.sname }}</span>
-                                </div>
-                              </v-card-title>
-                            </v-flex>
-                          </v-layout>
-                        </v-container>
-                      </v-card-text>
-                    </v-card>
+                    <v-list two-line v-for="(spec, index) in fish" :key="index" class="pa-0">
+                      <v-list-tile>
+                        <v-list-tile-avatar tile>
+                          <img
+                            :src="spec.img"
+                            aspect-ratio="1"
+                            alt="avatar"
+                            class="primary"
+                          >
+                        </v-list-tile-avatar>
+
+                        <v-list-tile-content>
+                          <v-list-tile-title>{{ spec.name }}</v-list-tile-title>
+                          <v-list-tile-sub-title>{{ spec.sname }}</v-list-tile-sub-title>
+                        </v-list-tile-content>
+                      </v-list-tile>
+                      <v-divider></v-divider>
+                    </v-list>
                   </v-card>
                 </v-flex>
               </v-layout>
