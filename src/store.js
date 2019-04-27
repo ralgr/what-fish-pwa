@@ -5,16 +5,17 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    page: 'Page Name'
+    fish: null
   },
   mutations: {
-    setPage: (state, payload) => {
-      state.page = payload
+    setFish: (state, payload) => {
+      state.fish = payload
+      console.log(state.fish);
     }
   },
   actions: {
-    setPageAction: ({ commit }, payload) => {
-      commit('setPage', payload)
+    setFishAction: ({ commit }, payload) => {
+      commit('setFish', payload)
     }
   }
 })

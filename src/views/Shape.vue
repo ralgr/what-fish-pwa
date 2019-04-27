@@ -6,7 +6,7 @@
     <v-container grid-list-md text-xs-center>
       <v-layout row wrap>
         <v-flex xs6 v-for="shape in fishapes" :key="shape.type">
-          <v-card elevation="5" class="pointer red lighten-4" @click="shapeClick(shape.type)">
+          <v-card elevation="5" class="pointer clam" @click="shapeClick(shape.type)">
             <v-img
               :src="shape.shape"
               aspect-ratio="1"
@@ -24,7 +24,6 @@
 
 <script>
 import Navigation from '@/components/Navigation'
-import { mapActions } from 'vuex'
 
 export default {
   name: 'Shape',
@@ -48,12 +47,9 @@ export default {
   },
 
   methods: {
-    ...mapActions([
-      'setPageAction'
-    ]),
     shapeClick(type) {
-      this.setPageAction(type)
-      this.$router.push({name: 'shape2', params:{ id: type}})
+      // Push to Shape2
+      this.$router.push({name: 'shape2', params:{ id: type, from: this.name }})
     }
   }
 }
@@ -67,5 +63,9 @@ export default {
 
   .pointer {
     cursor: pointer;
+  }
+
+  .clam {
+    background-color: #F5DDCD;
   }
 </style>
