@@ -76,7 +76,7 @@ export default {
       this.setFishAction(this.fish[index])
 
       let fromId = this.$route.params.id;
-      this.$router.push({name: 'fishpage', params:{ fromId: fromId, fish: fishName }})
+      this.$router.push({name: 'fishstats', params:{ fromId: fromId, fish: fishName }})
     }
   }
 }

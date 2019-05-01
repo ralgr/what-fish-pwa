@@ -49,7 +49,7 @@ export default {
   methods: {
     shapeClick(type) {
       // Push to Shape2
-      this.$router.push({name: 'shape2', params:{ id: type, from: this.name }})
+      this.$router.push({name: 'shape2', params:{ id: type }})
     }
   }
 }

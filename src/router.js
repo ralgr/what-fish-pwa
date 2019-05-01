@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Shape from './views/SearchByShape.vue'
 import Shape2 from './views/SearchByShape2.vue'
-import Fishpage from './views/FishStats.vue'
+import Fishstats from './views/FishStats.vue'
 
 Vue.use(Router)
 
@@ -36,8 +36,8 @@ export default new Router({
     },
     {
       path: '/shape/:fromId/:fish',
-      name: 'fishpage',
-      component: Fishpage
+      name: 'fishstats',
+      component: Fishstats
     }
   ]
 })
