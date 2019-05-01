@@ -58,7 +58,7 @@
 import { mapActions } from 'vuex'
 
 export default {
-  name: 'Fishlist',
+  name: 'FishList',
 
   props: {
     fish: {

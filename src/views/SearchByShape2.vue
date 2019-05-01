@@ -3,25 +3,34 @@
     <!-- Navigation component -->
     <Navigation :page="this.$route.params.id"/>
 
-    <Fishlist :fish="fish"/>
+    <FishList :fish="fish"/>
   </div>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation'
-import Fishlist from '@/components/Fishlist'
+import FishList from '@/components/FishList'
+import { db } from '@/config/Firebase'
+import sb from '@/assets/Snowball.png'
+import dv from '@/assets/Diving.png'
+import fp from '@/assets/Free Pig.png'
+import stb from '@/assets/Steamed Buns.png'
+import lk from '@/assets/Leek.png'
+import wt from '@/assets/Watching.png'
 
 export default {
-  name: 'Shape2',
+  name: 'SBS2',
 
   components: {
     Navigation,
-    Fishlist
+    FishList
   },
 
   data() {
     return {
       pageName: null,
+      imgs: [sb, dv, fp, wt, lk, stb],
+      imageInb64: [],
       fish: [
         {
           name: 'Spongebob',
@@ -130,7 +139,31 @@ export default {
   //   // react to route changes...
   //   // don't forget to call next()
   // }
+
+  mounted() {
+    console.log('Done');
+
+    // Turn image to base64 string value
+    const fileReader = new FileReader();
+
+    this.imgs.forEach(img => {
+      // Async event to convert the image into base64
+      fileReader.readAsDataURL(img)
+
+      // Listen for load event after async task finishes
+      fileReader.addEventListener('load', () => {
+        this.imageInb64 = fileReader.result;
+      })
+    })
+
+    console.log(this.imageInb64);
+    // this.fish.forEach(f => {
+    //   // Save location
+    //   db.collection('what-fish-fish-data').add(f)
+    // })
+  }
 }
+
 </script>
 
 <style lang="css" scoped>

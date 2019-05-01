@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Shape from './views/Shape.vue'
-import Shape2 from './views/Shape2.vue'
-import Fishpage from './views/Fishpage.vue'
+import Shape from './views/SearchByShape.vue'
+import Shape2 from './views/SearchByShape2.vue'
+import Fishpage from './views/FishStats.vue'
 
 Vue.use(Router)
 

@@ -5,8 +5,8 @@
 
     <v-container grid-list-md text-xs-center>
       <v-layout row wrap>
-        <v-flex xs6 v-for="shape in fishapes" :key="shape.type">
-          <v-card elevation="5" class="pointer clam" @click="shapeClick(shape.type)">
+        <v-flex xs6 sm4 md4 lg2 v-for="shape in fishapes" :key="shape.type">
+          <v-card flat class="pointer clam" @click="shapeClick(shape.type)">
             <v-img
               :src="shape.shape"
               aspect-ratio="1"
@@ -14,7 +14,7 @@
               contain
             >
             </v-img>
-            <v-card-text class="px-0">{{ shape.type }}</v-card-text>
+            <v-card-text class="px-0 deep-orange--text text--lighten-3">{{ shape.type }}</v-card-text>
           </v-card>
         </v-flex>
       </v-layout>
@@ -26,7 +26,7 @@
 import Navigation from '@/components/Navigation'
 
 export default {
-  name: 'Shape',
+  name: 'SBS',
 
   components: {
     Navigation

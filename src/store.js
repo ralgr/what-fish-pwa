@@ -10,7 +10,6 @@ export default new Vuex.Store({
   mutations: {
     setFish: (state, payload) => {
       state.fish = payload
-      console.log(state.fish);
     }
   },
   actions: {
