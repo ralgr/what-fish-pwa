@@ -30,7 +30,7 @@
                             </template>
                             <v-card color="transparent">
                               <v-img
-                                src="#"
+                                :src="fishState.img"
                                 alt="Sommething"
                                 aspect-ratio="1"
                                 contain

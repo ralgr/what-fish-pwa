@@ -3,6 +3,7 @@
     <!-- Navigation component -->
     <Navigation :page="this.$route.params.id"/>
 
+    <!-- FishList component -->
     <FishList :fish="fishCollectionState"/>
   </div>
 </template>
