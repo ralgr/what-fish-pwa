@@ -24,6 +24,7 @@
                 <v-icon left>add_photo_alternate</v-icon>
                 <span>Upload Images</span>
               </v-btn>
+              <!-- ImageUpload component -->
               <ImageUpload/>
               <!-- Fish stats shown by FishStatCard component -->
               <!-- Data is supplied throught vuex store -->
@@ -75,23 +76,7 @@ export default {
     },
     toOpenUploadDialog() {
       this.openUploadDialogAction()
-    },
-    // onImagePick() {
-    //   this.$refs.inputFile.click();
-    // },
-    // onFilePicked(event) {
-    //   const files = event.target.files;
-    //   // Turn image to base64 string value
-    //   const fileReader = new FileReader();
-    //
-    //   // Async event to convert the image into base64
-    //   fileReader.readAsDataURL(files)
-    //
-    //   // Listen for load event after async task finishes
-    //   fileReader.addEventListener('load', () => {
-    //     this.imageUrl = fileReader.result;
-    //   })
-    // }
+    }
   },
 
   computed: {

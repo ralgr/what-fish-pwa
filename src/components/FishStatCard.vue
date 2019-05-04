@@ -30,7 +30,7 @@
                             </template>
                             <v-card color="transparent">
                               <v-img
-                                :src="fish.img"
+                                src="#"
                                 alt="Sommething"
                                 aspect-ratio="1"
                                 contain
@@ -53,7 +53,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import createDataSet from './mixin/createDataSet'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'FishStatCard',
@@ -65,69 +66,11 @@ export default {
   },
 
   computed: {
-    ...mapState([
-      'fish'
+    ...mapGetters([
+      'fishState'
     ]),
     dataSet() {
-      var dataSet = [
-        {
-          setName: 'Information',
-          dataToShow: [
-            {
-              data: 'Scientific Name',
-              subdata: this.fish.sname,
-            },
-            {
-              data: 'Minimum Shore Size',
-              subdata: this.fish.shore,
-            }
-          ]
-        },
-        {
-          setName: 'Species Order',
-          dataToShow: [
-            {
-              data: this.fish.specorder,
-              subdata: false
-            }
-          ]
-        },
-        {
-          setName: 'Species Description',
-          dataToShow: [
-            {
-              data: null,
-              subdata: this.fish.desc
-            }
-          ]
-        },
-        {
-          setName: 'Suggested Bait and Rigs',
-          dataToShow: [
-            {
-              data: 'Shore Bait',
-              subdata: false,
-              popup: true
-            },
-            {
-              data: 'Shore Rig',
-              subdata: false,
-              popup: true
-            },
-            {
-              data: 'Boat/Kayak Bait',
-              subdata: false,
-              popup: true
-            },
-            {
-              data: 'Boat/Kayak Rig',
-              subdata: false,
-              popup: true
-            }
-          ]
-        }
-      ]
-      return dataSet
+      return createDataSet(this.fishState);
     }
   }
 }

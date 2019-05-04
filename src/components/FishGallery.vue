@@ -32,7 +32,7 @@
                     :src="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
                     max-height="150px"
                   >
-                    <v-layout pa-2 column fill-height class="lightbox white--text onHover">
+                    <v-layout pa-2 column fill-height class="white--text">
                       <v-spacer></v-spacer>
                       <v-flex shrink>
                         <div class="subheading">Title</div>
@@ -55,7 +55,7 @@
                   :src="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
                   max-height="150px"
                 >
-                  <v-layout pa-2 column fill-height class="lightbox white--text onHover">
+                  <v-layout pa-2 column fill-height class="lightbox white--text">
                     <v-spacer></v-spacer>
                     <v-flex shrink>
                       <div class="subheading">Title</div>

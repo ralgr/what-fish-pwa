@@ -24,6 +24,7 @@
 
 <script>
 import Navigation from '@/components/Navigation'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'SBS',
@@ -47,8 +48,16 @@ export default {
   },
 
   methods: {
+    ...mapActions([
+      'setFishCollectionAction'
+    ]),
     shapeClick(type) {
+      // Search for fish with selected type
+      // Set data in store or as a prop
+      this.setFishCollectionAction(type)
+
       // Push to Shape2
+      // Id is a dynamic value for use in router
       this.$router.push({name: 'shape2', params:{ id: type }})
     }
   }

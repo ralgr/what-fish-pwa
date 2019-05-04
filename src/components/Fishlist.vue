@@ -12,6 +12,7 @@
                     <v-text-field
                       label="Search"
                       prepend-icon="search"
+                      v-model="filterFish"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
@@ -67,16 +68,37 @@ export default {
     }
   },
 
+  data() {
+    return {
+      filterFish: null
+    }
+  },
+
+  watch: {
+    filterFish: {
+      handler: 'toFilterFish'
+    }
+  },
+
   methods: {
     ...mapActions([
-      'setFishAction'
+      'setFishAction',
     ]),
     openFishInfo(fishName, index) {
       // Set fish to be viewed in fishpage
       this.setFishAction(this.fish[index])
 
+      // Router push to FishStats view
+      // CUrrent page ID is used as an indicator of where the user came from
       let fromId = this.$route.params.id;
       this.$router.push({name: 'fishstats', params:{ fromId: fromId, fish: fishName }})
+    },
+
+    toFilterFish() {
+      const result = this.fish.filter(fish => {
+        return fish.name == this.filterFish
+      })
+      console.log(result);
     }
   }
 }

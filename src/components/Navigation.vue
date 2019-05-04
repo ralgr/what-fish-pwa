@@ -1,12 +1,16 @@
 <template lang="html">
   <div class="navbar">
     <v-toolbar flat class="ocean">
+      <!-- Back button -->
       <v-btn
         flat icon
         @click="$router.go(-1)"
         color="teal accent-4">
         <v-icon>chevron_left</v-icon>
       </v-btn>
+
+      <!-- Toolbar title -->
+      <!-- Supplied via props -->
       <v-toolbar-title class="headline text-capitalize teal--text text--accent-4">
         <span>{{ page }}</span>
       </v-toolbar-title>
