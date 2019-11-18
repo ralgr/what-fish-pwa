@@ -1,4 +1,11 @@
 # what-fish-pwa
+Final year project pertaining to the recreation of a previously existing app to a PWA.
+
+## Requirements
+Run on both Apple and Android devices.
+
+## Status
+Basic functions only.
 
 ## Project setup
 ```
