@@ -1,5 +1,13 @@
 # what-fish-pwa
-Final year project pertaining to the recreation of a previously existing app to a PWA.
+A PWA designed to show various details of saltwater fish. This makes use of Vue.js, Vuetify.js, and Firebase.
+
+# Current State
+* Unable to open when downloaded as a PWA using Chrome.
+* Offline functionality available.
+* Authentication functional.
+* Image upload functional.
+* Image gallery functional.
+* Hard refresh redirects to appropriate pages.
 
 ## Requirements
 Run on both Apple and Android devices.
